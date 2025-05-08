@@ -101,7 +101,7 @@ export default function TransferModal({
 
   return (
     <ModalWrapper onClose={onClose}>
-      <h2 className="text-xl font-bold text-red-900 mb-4">Transfer Funds</h2>
+      <h2 className="text-xl font-bold text-[#650000] mb-4">Transfer Funds</h2>
       <div className="space-y-4">
         <FloatingLabelInput
           label="Recipient Account Number"
@@ -138,14 +138,14 @@ export default function TransferModal({
         <div className="flex justify-end gap-3">
             <button
                 onClick={onClose}
-                className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
+                className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-[#650000]"
                 >
                 Cancel
             </button>
           <button
             onClick={handleTransfer}
             disabled={loading}
-            className="bg-red-900 text-white px-5 py-2 rounded-lg hover:bg-red-800 disabled:opacity-50"
+            className="bg-[#650000] text-white px-5 py-2 rounded-lg hover:bg-red-800 disabled:opacity-50"
           >
             {loading ? 'Transferring...' : 'Make Transfer'}
           </button>

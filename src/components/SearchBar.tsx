@@ -82,7 +82,7 @@ export default function SearchBar({
 
   return (
     <div className="bg-white rounded-xl shadow-md px-6 py-6 sm:px-8 my-6">
-    <h2 className="text-xl font-bold text-red-900 mb-4">Client Directory</h2>
+    <h2 className="text-xl font-bold text-[#650000] mb-4">Client Directory</h2>
 
     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         {/* Form Section */}
@@ -105,13 +105,13 @@ export default function SearchBar({
         </div>
 
         <div className="flex-[1.2] min-w-[160px] relative group">
-            <label className="absolute -top-2 left-4 bg-white px-1 text-sm text-gray-900 z-10 group-hover:text-red-900 group-hover:font-semibold group-focus-within:text-red-900 transition-colors">
+            <label className="absolute -top-2 left-4 bg-white px-1 text-sm text-gray-900 z-10 group-hover:text-[#650000] group-hover:font-semibold group-focus-within:text-[#650000] transition-colors">
             Account Type
             </label>
             <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full border-2 border-gray-500 rounded-xl px-4 py-[0.65rem] bg-white text-gray-700 focus:outline-none focus:ring-1 group-focus:border-2 group-hover:border-2 focus:ring-red-900 group-hover:border-red-900 transition-all"
+            className="w-full border-2 border-gray-500 rounded-xl px-4 py-[0.65rem] bg-white text-gray-700 focus:outline-none focus:ring-1 group-focus:border-2 group-hover:border-2 focus:ring-[#650000] group-hover:border-[#650000] transition-all"
             >
             <option value="Checking">Checking</option>
             <option value="Savings">Savings</option>
@@ -122,7 +122,7 @@ export default function SearchBar({
         {/* Search Button */}
         <button
             onClick={onSearch}
-            className="flex items-center justify-center border-1 border-gray-900 gap-2 bg-red-900 text-white px-4 py-3 rounded-xl hover:bg-red-800 transition w-full sm:w-auto"
+            className="flex items-center justify-center border-1 border-gray-900 gap-2 bg-[#650000] text-white px-4 py-3 rounded-xl hover:bg-red-800 transition w-full sm:w-auto"
         >
             <MagnifyingGlassIcon className="h-5 w-5" />
         </button>
@@ -168,7 +168,7 @@ export default function SearchBar({
             alt="User"
             width={40}
             height={40}
-            className="rounded-full object-cover border border-red-900"
+            className="rounded-full object-cover border border-[#650000]"
         />
         </div>
     </div>

@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import SearchBar from '../components/SearchBar';
 import ClientTable from '../components/ClientsTable';
-import AddClientModal from '../components/modals/AddClientModal';
-import ViewClientModal from '../components/modals/ViewClientModal';
-import TransferModal from '../components/modals/TransferModal';
-import DeleteConfirmModal from '../components/modals/DeleteConfirmModal';
+import dynamic from 'next/dynamic';
+
+const AddClientModal = dynamic(() => import('../components/modals/AddClientModal'));
+const ViewClientModal = dynamic(() => import('../components/modals/ViewClientModal'));
+const TransferModal = dynamic(() => import('../components/modals/TransferModal'));
+const DeleteConfirmModal = dynamic(() => import('../components/modals/DeleteConfirmModal'));
+
+
 import { Client } from '../types';
 
 export default function Home() {
@@ -108,7 +112,7 @@ export default function Home() {
             <button
               disabled={page === 1}
               onClick={() => setPage((p) => p - 1)}
-              className="px-3 py-1 bg-red-900 rounded disabled:opacity-50"
+              className="px-3 py-1 bg-[#650000] rounded disabled:opacity-50"
             >
               Prev
             </button>
@@ -116,7 +120,7 @@ export default function Home() {
             <button
               disabled={page === totalPages || totalPages === 0}
               onClick={() => setPage((p) => p + 1)}
-              className="px-3 py-1 bg-red-900 rounded disabled:opacity-50"
+              className="px-3 py-1 bg-[#650000] rounded disabled:opacity-50"
             >
               Next
             </button>
@@ -136,7 +140,7 @@ export default function Home() {
                 placeholder="Go to"
                 value={gotoPage}
                 onChange={(e) => setGotoPage(e.target.value)}
-                className="w-24 px-2 py-1 border text-gray-500 border-gray-500 rounded text-sm hover:border-red-900 focus:outline-none focus:ring-1 focus:ring-red-900"
+                className="w-24 px-2 py-1 border text-gray-500 border-gray-500 rounded text-sm hover:border-[#650000] focus:outline-none focus:ring-1 focus:ring-[#650000]"
                 min={1}
                 max={totalPages}
               />

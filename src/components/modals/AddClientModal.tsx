@@ -79,7 +79,7 @@ export default function AddClientModal({
 
   return (
     <ModalWrapper onClose={onClose}>
-      <h2 className="text-xl font-bold text-red-900 mb-4">Add Client</h2>
+      <h2 className="text-xl font-bold text-[#650000] mb-4">Add Client</h2>
 
       <div className="space-y-4">
         <FloatingLabelInput
@@ -96,11 +96,11 @@ export default function AddClientModal({
         />
 
         <div className="relative w-full group">
-          <label className="absolute -top-2 left-4 bg-white px-1 text-sm text-red-900 z-10">Account Type</label>
+          <label className="absolute -top-2 left-4 bg-white px-1 text-sm text-[#650000] z-10">Account Type</label>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full border-2 border-red-900 rounded-xl px-4 py-[0.65rem] bg-white text-gray-700 focus:outline-none focus:ring-1 focus:ring-red-900"
+            className="w-full border-2 border-[#650000] rounded-xl px-4 py-[0.65rem] bg-white text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#650000]"
           >
             <option value="Checking">Checking</option>
             <option value="Savings">Savings</option>
@@ -121,14 +121,14 @@ export default function AddClientModal({
         <div className="flex justify-end gap-3">
             <button
                 onClick={onClose}
-                className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
+                className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-[#650000]"
             >
                 Cancel
             </button>
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="bg-red-900 text-white px-5 py-2 rounded-lg hover:bg-red-800 disabled:opacity-50"
+            className="bg-[#650000] text-white px-5 py-2 rounded-lg hover:bg-red-800 disabled:opacity-50"
           >
             {loading ? 'Creating...' : 'Create Client'}
           </button>

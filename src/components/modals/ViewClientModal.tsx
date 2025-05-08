@@ -14,7 +14,7 @@ export default function ViewClientModal({
 
   return (
     <ModalWrapper onClose={onClose}>
-      <h2 className="text-xl font-bold text-red-900 mb-4">Client Details</h2>
+      <h2 className="text-xl font-bold text-[#650000] mb-4">Client Details</h2>
       <div className="space-y-3 text-gray-700 text-sm">
         <p><span className="font-semibold">Name:</span> {client.name}</p>
         <p><span className="font-semibold">Birthday:</span> {formattedBirthday}</p>
@@ -26,7 +26,7 @@ export default function ViewClientModal({
       <div className="mt-6 text-right">
         <button
             onClick={onClose}
-            className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
+            className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-[#650000]"
         >
             Close
         </button>

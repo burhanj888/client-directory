@@ -9,9 +9,9 @@ export default function DownloadOverlay({ status }: { status: string }) {
         {isComplete ? (
           <CheckCircleIcon className="h-16 w-16 text-green-600 animate-bounce mb-3" />
         ) : (
-          <div className="w-8 h-8 border-4 border-red-900 border-t-transparent rounded-full animate-spin mb-3" />
+          <div className="w-8 h-8 border-4 border-[#650000] border-t-transparent rounded-full animate-spin mb-3" />
         )}
-        <p className="text-red-900 font-semibold text-lg">
+        <p className="text-[#650000] font-semibold text-lg">
           {status}
         </p>
       </div>

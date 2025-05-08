@@ -26,7 +26,7 @@ export default function DeleteConfirmModal({
 
   return (
     <ModalWrapper onClose={onClose}>
-      <h2 className="text-xl font-bold text-red-900 mb-4">Delete Account</h2>
+      <h2 className="text-xl font-bold text-[#650000] mb-4">Delete Account</h2>
       <p className="text-sm text-gray-700 mb-6">
         Are you sure you want to permanently close the account for{' '}
         <span className="font-semibold">{client.name}</span> ({client.account})?
@@ -35,13 +35,13 @@ export default function DeleteConfirmModal({
       <div className="flex justify-end gap-3">
         <button
           onClick={onClose}
-          className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
+          className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-[#650000]"
         >
           Cancel
         </button>
         <button
           onClick={handleDelete}
-          className="px-4 py-2 text-sm rounded-lg bg-red-900 text-white hover:bg-red-800"
+          className="px-4 py-2 text-sm rounded-lg bg-[#650000] text-white hover:bg-red-800"
         >
           Confirm Delete
         </button>

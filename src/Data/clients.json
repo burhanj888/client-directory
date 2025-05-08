@@ -89,6 +89,287 @@
       "type": "Checking",
       "account": "3647382910594",
       "balance": 140.31
-    }
+    },
+        {
+          "name": "Noah Alexander Flynn",
+          "birthday": "03/14/1991",
+          "type": "Savings",
+          "account": "1039485762394",
+          "balance": 6789.45
+        },
+        {
+          "name": "Ava Mackenzie Harper",
+          "birthday": "06/02/1986",
+          "type": "Checking",
+          "account": "2039485761039",
+          "balance": 4321.67
+        },
+        {
+          "name": "William Charles Dean",
+          "birthday": "11/09/1994",
+          "type": "Savings",
+          "account": "3094857610392",
+          "balance": 9102.34
+        },
+        {
+          "name": "Sophia Isabelle Tran",
+          "birthday": "01/30/2001",
+          "type": "Checking",
+          "account": "4058372619482",
+          "balance": 3124.56
+        },
+        {
+          "name": "Benjamin Oliver Reyes",
+          "birthday": "08/21/1977",
+          "type": "Savings",
+          "account": "5049382716340",
+          "balance": 5789.43
+        },
+        {
+          "name": "Mia Scarlett Fox",
+          "birthday": "09/05/1990",
+          "type": "Checking",
+          "account": "6049382712038",
+          "balance": 1456.78
+        },
+        {
+          "name": "Elijah Nathan Brooks",
+          "birthday": "04/12/1988",
+          "type": "Savings",
+          "account": "7093827461837",
+          "balance": 8723.56
+        },
+        {
+          "name": "Amelia Rose Nguyen",
+          "birthday": "02/25/1993",
+          "type": "Checking",
+          "account": "8093726457182",
+          "balance": 2498.60
+        },
+        {
+          "name": "James Henry Cooper",
+          "birthday": "07/17/1979",
+          "type": "Savings",
+          "account": "9102938475610",
+          "balance": 6932.11
+        },
+        {
+          "name": "Charlotte Aurora Silva",
+          "birthday": "05/11/1998",
+          "type": "Checking",
+          "account": "0192837465827",
+          "balance": 3284.75
+        },
+        {
+          "name": "Logan Michael White",
+          "birthday": "10/08/1992",
+          "type": "Savings",
+          "account": "1293847561029",
+          "balance": 5820.90
+        },
+        {
+          "name": "Abigail Skye Bennett",
+          "birthday": "12/24/1983",
+          "type": "Checking",
+          "account": "2398475619203",
+          "balance": 910.47
+        },
+        {
+          "name": "Lucas Daniel Hayes",
+          "birthday": "03/04/1985",
+          "type": "Savings",
+          "account": "3498576120394",
+          "balance": 4870.33
+        },
+        {
+          "name": "Harper Lily Morgan",
+          "birthday": "06/16/1996",
+          "type": "Checking",
+          "account": "4592837461820",
+          "balance": 3652.00
+        },
+        {
+          "name": "Jackson Mateo Knight",
+          "birthday": "01/13/1980",
+          "type": "Savings",
+          "account": "5692038475120",
+          "balance": 7891.10
+        },
+        {
+          "name": "Ella Brooklyn Rivera",
+          "birthday": "07/27/1997",
+          "type": "Checking",
+          "account": "6793847561209",
+          "balance": 2763.89
+        },
+        {
+          "name": "Sebastian Cole Ford",
+          "birthday": "11/05/1984",
+          "type": "Savings",
+          "account": "7892038475619",
+          "balance": 6284.55
+        },
+        {
+          "name": "Aria Faith Simmons",
+          "birthday": "02/14/2003",
+          "type": "Checking",
+          "account": "8938475610293",
+          "balance": 1985.62
+        },
+        {
+          "name": "Grayson Elijah Lane",
+          "birthday": "09/01/1990",
+          "type": "Savings",
+          "account": "9837461203948",
+          "balance": 8394.28
+        },
+        {
+          "name": "Victoria Jade Wells",
+          "birthday": "04/28/1987",
+          "type": "Checking",
+          "account": "1029384756193",
+          "balance": 1423.95
+        },
+            {
+              "name": "Liam Carter",
+              "birthday": "06/18/1992",
+              "type": "Checking",
+              "account": "1092837465810",
+              "balance": 3284.12
+            },
+            {
+              "name": "Emma Torres",
+              "birthday": "11/22/1984",
+              "type": "Savings",
+              "account": "2093847561203",
+              "balance": 4567.89
+            },
+            {
+              "name": "Noah Brown",
+              "birthday": "07/15/1995",
+              "type": "Checking",
+              "account": "3092847561029",
+              "balance": 6789.01
+            },
+            {
+              "name": "Olivia Lewis",
+              "birthday": "02/12/1990",
+              "type": "Savings",
+              "account": "4093847561938",
+              "balance": 5234.76
+            },
+            {
+              "name": "Ethan Scott",
+              "birthday": "04/09/1988",
+              "type": "Checking",
+              "account": "5092837465810",
+              "balance": 2975.44
+            },
+            {
+              "name": "Ava Martinez",
+              "birthday": "09/03/1993",
+              "type": "Savings",
+              "account": "6093847561093",
+              "balance": 8123.60
+            },
+            {
+              "name": "Mason Reed",
+              "birthday": "12/20/1979",
+              "type": "Checking",
+              "account": "7092847561390",
+              "balance": 2341.89
+            },
+            {
+              "name": "Sophia Lee",
+              "birthday": "03/27/1997",
+              "type": "Savings",
+              "account": "8093847561200",
+              "balance": 6520.34
+            },
+            {
+              "name": "James Hill",
+              "birthday": "08/11/1982",
+              "type": "Checking",
+              "account": "9092837465011",
+              "balance": 1390.75
+            },
+            {
+              "name": "Isabella Young",
+              "birthday": "01/30/1991",
+              "type": "Savings",
+              "account": "0192837465103",
+              "balance": 7854.99
+            },
+            {
+              "name": "Logan Walker",
+              "birthday": "05/05/1994",
+              "type": "Checking",
+              "account": "1293847562094",
+              "balance": 3476.20
+            },
+            {
+              "name": "Mia Allen",
+              "birthday": "06/25/1985",
+              "type": "Savings",
+              "account": "2398475612309",
+              "balance": 6345.12
+            },
+            {
+              "name": "Alexander Perez",
+              "birthday": "10/01/1980",
+              "type": "Checking",
+              "account": "3498576120901",
+              "balance": 980.45
+            },
+            {
+              "name": "Emily Stewart",
+              "birthday": "07/14/1998",
+              "type": "Savings",
+              "account": "4593847562093",
+              "balance": 2401.33
+            },
+            {
+              "name": "Daniel Adams",
+              "birthday": "09/19/1983",
+              "type": "Checking",
+              "account": "5693847561038",
+              "balance": 3870.66
+            },
+            {
+              "name": "Ella Jenkins",
+              "birthday": "11/07/1996",
+              "type": "Savings",
+              "account": "6793847561201",
+              "balance": 4152.77
+            },
+            {
+              "name": "Henry Rivera",
+              "birthday": "04/17/1986",
+              "type": "Checking",
+              "account": "7893847562039",
+              "balance": 3721.10
+            },
+            {
+              "name": "Grace Murphy",
+              "birthday": "03/08/2000",
+              "type": "Savings",
+              "account": "8938475610210",
+              "balance": 2314.55
+            },
+            {
+              "name": "Sebastian Price",
+              "birthday": "08/23/1978",
+              "type": "Checking",
+              "account": "9837461203847",
+              "balance": 1987.42
+            },
+            {
+              "name": "Chloe Watson",
+              "birthday": "12/29/1992",
+              "type": "Savings",
+              "account": "1029384756120",
+              "balance": 6498.11
+            }
+          
   ]
   

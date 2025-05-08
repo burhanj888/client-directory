@@ -8,7 +8,7 @@ A responsive, full-featured client directory web application designed for bankin
 ## 🌐 Live Site
 
 Try it out here:  
-🔗 [client-directory-app.vercel.app](https://client-directory-f7gt.vercel.app/)
+🔗 [https://client-directory-f7gt.vercel.app/](https://client-directory-f7gt.vercel.app/)
 
 ---
 

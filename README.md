@@ -39,7 +39,7 @@ Try it out here:
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/client-directory-app.git
+git clone https://github.com/burhanj888/client-directory-app.git
 cd client-directory-app
 npm install
 npm run dev

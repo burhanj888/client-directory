@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../../lib/supabase';
 import ModalWrapper from './ModalWrapper';
 import FloatingLabelInput from '../FloatingLabelInput';
@@ -24,29 +24,26 @@ export default function AddClientModal({
     return Math.floor(1000000000000 + Math.random() * 9000000000000).toString();
   };
 
-  const validate = () => {
+  const validate = useCallback(() => {
     if (!name.trim()) return 'Name is required.';
     if (!/^[A-Za-z\s]+$/.test(name.trim())) return 'Name can only contain letters and spaces.';
     if (!birthday) return 'Birthday is required.';
-  
     const birthDate = new Date(birthday);
     const age = new Date().getFullYear() - birthDate.getFullYear();
     const hasBirthdayPassedThisYear =
       new Date().getMonth() > birthDate.getMonth() ||
       (new Date().getMonth() === birthDate.getMonth() && new Date().getDate() >= birthDate.getDate());
-  
     const fullAge = hasBirthdayPassedThisYear ? age : age - 1;
     if (fullAge < 16) return 'Client must be at least 16 years old.';
-  
     if (!balance || isNaN(Number(balance))) return 'Balance must be a valid number.';
     if (Number(balance) < minBalance) return `Minimum balance for a ${type} account is $${minBalance}`;
-  
     return '';
-  };
+  }, [name, birthday, balance, minBalance, type]);
+  
 
   useEffect(() => {
     setError(validate());
-  }, [name, birthday, type, balance]);
+  }, [validate]);
 
   const handleSubmit = async () => {
     const validationError = validate();

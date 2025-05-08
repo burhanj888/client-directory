@@ -26,18 +26,29 @@ export default function TransferModal({
     const validateAccount = async () => {
       setReceiver(null);
       if (account1.length === 13 && account1 === account2) {
-        const { data, error } = await supabase
-          .from('clients')
-          .select('*')
-          .eq('account', account1)
-          .single();
-
-        if (data && data.id !== client.id) {
-          setReceiver(data);
-        } else {
+        try {
+          const { data, error } = await supabase
+            .from('clients')
+            .select('*')
+            .eq('account', account1)
+            .single();
+      
+          if (error) {
+            console.error('Error fetching receiver:', error.message);
+            setReceiver(null); // Optional: only clear if needed
+            return;
+          }
+      
+          if (data && data.id !== client.id) {
+            setReceiver(data);
+          } else {
+            setReceiver(null); // Same account or no match
+          }
+        } catch (err) {
+          console.error('Unexpected error:', err);
           setReceiver(null);
         }
-      }
+      }      
     };
 
     validateAccount();
@@ -55,6 +66,7 @@ export default function TransferModal({
   const handleTransfer = async () => {
     const error = validate();
     if (error) {
+      setValidationError(error);
       toast.error(error);
       return;
     }

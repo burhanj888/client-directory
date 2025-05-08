@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { BellIcon, Cog6ToothIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import FloatingLabelInput from './FloatingLabelInput';
+import Image from 'next/image';
+
 
 type Props = {
     search: string;
@@ -114,10 +116,12 @@ export default function SearchBar({
             )}
         </div>
 
-        <img
+        <Image
             src="/avatar.jpg"
             alt="User"
-            className="h-10 w-10 rounded-full object-cover border border-red-900"
+            width={40}
+            height={40}
+            className="rounded-full object-cover border border-red-900"
         />
         </div>
     </div>

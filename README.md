@@ -1,40 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🧾 Client Directory App
 
-## Getting Started
+A responsive, full-featured client directory web application designed for banking and financial use cases. Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Supabase**, the app allows secure and real-time management of client data — including viewing details, performing fund transfers, and account closures.
 
-First, run the development server:
+---
+
+
+## 🌐 Live Site
+
+Try it out here:  
+🔗 [client-directory-app.vercel.app](https://client-directory-f7gt.vercel.app/)
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend:** [Next.js](https://nextjs.org/) (Pages Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Backend:** [Supabase](https://supabase.io/) (PostgreSQL + Realtime + Auth)
+- **State Management:** React Hooks
+- **Tooling:** TypeScript, Heroicons, React Hot Toast, PapaParse
+
+---
+
+## ✨ Features
+
+- 🔍 Search clients by name, birthday, or account type
+- ➕ Add new clients with validation and account number generation
+- 🔁 Real-time fund transfer with validation and balance checks
+- ❌ Close accounts with confirmation
+- 📄 Download full client list as CSV with animated loading overlay
+- 📱 Fully responsive design with floating label inputs
+- 📊 Pagination with go-to-page input and range display
+- ⚠️ Validation, error handling, and toasts across all user actions
+- 🧠 Lazy loading of all modals to improve performance
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/your-username/client-directory-app.git
+cd client-directory-app
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📺 Demo Video
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Watch the full walkthrough on Loom:  
+👉 [Client Directory App Demo](https://www.loom.com/share/4b0895c872e544ca89c0f93dea6e3b17?sid=290f6f16-ca00-4276-bda3-bed01880b3a6)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---

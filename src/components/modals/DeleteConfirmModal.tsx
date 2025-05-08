@@ -35,7 +35,7 @@ export default function DeleteConfirmModal({
       <div className="flex justify-end gap-3">
         <button
           onClick={onClose}
-          className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-700"
+          className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
         >
           Cancel
         </button>

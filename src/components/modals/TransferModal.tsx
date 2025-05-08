@@ -54,14 +54,15 @@ export default function TransferModal({
     validateAccount();
   }, [account1, account2, client.id]);
 
-  const validate = () => {
+    const validate = () => {
     if (!account1 || !account2) return 'Please enter and confirm recipient account number.';
     if (account1 !== account2) return 'Account numbers do not match.';
+    if (account1 === client.account) return 'You cannot transfer to your own account.';
     if (!receiver) return 'Receiver account not found.';
     if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) return 'Invalid amount.';
     if (Number(amount) > client.balance) return 'Insufficient balance.';
     return '';
-  };
+    };
 
   const handleTransfer = async () => {
     const error = validate();
@@ -116,9 +117,9 @@ export default function TransferModal({
         {account1 && account2 && (
           <p className="text-sm text-gray-700">
             {account1 === account2
-              ? receiver
-                ? `Receiver: ${receiver.name}`
-                : 'No matching account found.'
+                ? receiver
+                    ? `Receiver: ${receiver.name}`
+                    : 'No matching account found.'
               : 'Account numbers do not match.'}
           </p>
         )}
@@ -134,7 +135,13 @@ export default function TransferModal({
           <p className="text-sm text-red-600">{validationError}</p>
         )}
 
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-3">
+            <button
+                onClick={onClose}
+                className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
+                >
+                Cancel
+            </button>
           <button
             onClick={handleTransfer}
             disabled={loading}

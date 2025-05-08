@@ -8,43 +8,61 @@ import TransferModal from '../components/modals/TransferModal';
 import DeleteConfirmModal from '../components/modals/DeleteConfirmModal';
 import { Client } from '../types';
 
-
 export default function Home() {
   const [clients, setClients] = useState<Client[]>([]);
-  const [filteredClients, setFilteredClients] = useState<Client[]>([]);
-
   const [nameFilter, setNameFilter] = useState('');
   const [typeFilter, setTypeFilter] = useState('All');
   const [birthdayFilter, setBirthdayFilter] = useState('');
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [modalType, setModalType] = useState<'add' | 'view' | 'transfer' | 'delete' | null>(null);
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
 
-  // Fetch clients from Supabase
-  const fetchClients = async () => {
-    const { data, error } = await supabase.from('clients').select('*');
+  const [page, setPage] = useState(1);
+  const pageSize = 10;
+  const [totalCount, setTotalCount] = useState(0);
+  const [gotoPage, setGotoPage] = useState('');
+
+  const totalPages = Math.ceil(totalCount / pageSize);
+
+  const fetchClients = async (
+    name = nameFilter,
+    type = typeFilter,
+    birthday = birthdayFilter,
+    pageNumber = page
+  ) => {
+    setIsLoading(true); // start loading
+  
+    let query = supabase.from('clients').select('*', { count: 'exact' });
+  
+    if (name) query = query.ilike('name', `%${name}%`);
+    if (birthday) query = query.eq('birthday', birthday);
+    if (type !== 'All') query = query.eq('type', type);
+  
+    const from = (pageNumber - 1) * pageSize;
+    const to = from + pageSize - 1;
+  
+    const { data, count, error } = await query.range(from, to);
+  
+    setIsLoading(false); // done loading
+  
     if (error) {
       console.error('Error fetching clients:', error.message);
     } else {
       setClients(data as Client[]);
-      setFilteredClients(data as Client[]);
+      setTotalCount(count || 0);
     }
   };
+  
 
   useEffect(() => {
     fetchClients();
-  }, []);
+  }, [page]);
 
-  // Apply filters when Search is clicked
   const handleSearch = () => {
-    const filtered = clients.filter((client) => {
-      const matchesName = !nameFilter || client.name.toLowerCase().includes(nameFilter.toLowerCase());
-      const matchesType = typeFilter === 'All' || client.type === typeFilter;
-      const matchesBirthday = !birthdayFilter || client.birthday === birthdayFilter;
-      return matchesName && matchesType && matchesBirthday;
-    });
-
-    setFilteredClients(filtered);
+    setPage(1);
+    fetchClients(nameFilter, typeFilter, birthdayFilter, 1);
   };
 
   return (
@@ -62,7 +80,8 @@ export default function Home() {
         />
 
         <ClientTable
-          clients={filteredClients}
+          clients={clients}
+          isLoading={isLoading}
           onView={(client) => {
             setSelectedClient(client);
             setModalType('view');
@@ -76,32 +95,68 @@ export default function Home() {
             setModalType('delete');
           }}
         />
+
+        {/* Pagination */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mt-4 text-sm">
+          <p className='text-gray-500'>
+            Showing {Math.min((page - 1) * pageSize + 1, totalCount)}–
+            {Math.min(page * pageSize, totalCount)} of {totalCount} clients
+            <span className="ml-2 text-gray-500"> (Page {page} of {totalPages || 1})</span>
+          </p>
+
+          <div className="flex items-center gap-2">
+            <button
+              disabled={page === 1}
+              onClick={() => setPage((p) => p - 1)}
+              className="px-3 py-1 bg-red-900 rounded disabled:opacity-50"
+            >
+              Prev
+            </button>
+
+            <button
+              disabled={page === totalPages || totalPages === 0}
+              onClick={() => setPage((p) => p + 1)}
+              className="px-3 py-1 bg-red-900 rounded disabled:opacity-50"
+            >
+              Next
+            </button>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const num = parseInt(gotoPage);
+                if (!isNaN(num) && num >= 1 && num <= totalPages) {
+                  setPage(num);
+                }
+                setGotoPage('');
+              }}
+            >
+              <input
+                type="number"
+                placeholder="Go to"
+                value={gotoPage}
+                onChange={(e) => setGotoPage(e.target.value)}
+                className="w-24 px-2 py-1 border text-gray-500 border-gray-500 rounded text-sm hover:border-red-900 focus:outline-none focus:ring-1 focus:ring-red-900"
+                min={1}
+                max={totalPages}
+              />
+            </form>
+          </div>
+        </div>
       </div>
 
       {/* Modals */}
       {modalType === 'add' && (
-        <AddClientModal
-          onClose={() => setModalType(null)}
-          onSuccess={fetchClients} // ✅ refresh on success
-        />
+        <AddClientModal onClose={() => setModalType(null)} onSuccess={() => fetchClients()} />
       )}
       {modalType === 'view' && selectedClient && (
         <ViewClientModal client={selectedClient} onClose={() => setModalType(null)} />
       )}
       {modalType === 'transfer' && selectedClient && (
-        <TransferModal
-          client={selectedClient}
-          onClose={() => setModalType(null)}
-          onSuccess={fetchClients}
-        />
+        <TransferModal client={selectedClient} onClose={() => setModalType(null)} onSuccess={() => fetchClients()} />
       )}
-
       {modalType === 'delete' && selectedClient && (
-        <DeleteConfirmModal
-          client={selectedClient}
-          onClose={() => setModalType(null)}
-          onSuccess={fetchClients}
-        />
+        <DeleteConfirmModal client={selectedClient} onClose={() => setModalType(null)} onSuccess={() => fetchClients()} />
       )}
     </div>
   );

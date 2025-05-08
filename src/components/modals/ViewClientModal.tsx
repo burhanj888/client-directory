@@ -25,10 +25,10 @@ export default function ViewClientModal({
       </div>
       <div className="mt-6 text-right">
         <button
-          onClick={onClose}
-          className="text-sm text-gray-600 hover:text-red-800"
+            onClick={onClose}
+            className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:text-red-900"
         >
-          Close
+            Close
         </button>
       </div>
     </ModalWrapper>

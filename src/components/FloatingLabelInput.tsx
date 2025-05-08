@@ -23,7 +23,7 @@ export default function FloatingLabelInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full text-gray-500 border-2 border-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 group-focus:border-2 group-hover:border-2  focus:ring-red-900 group-hover:border-red-900 transition-all"
+        className="w-full text-gray-500 border-2 border-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 group-focus:border-2 group-hover:border-2 focus:ring-red-900 group-hover:border-red-900 transition-all"
       />
     </div>
   );

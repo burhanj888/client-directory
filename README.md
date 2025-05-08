@@ -39,8 +39,8 @@ Try it out here:
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/burhanj888/client-directory-app.git
-cd client-directory-app
+git clone https://github.com/burhanj888/client-directory.git
+cd client-directory
 npm install
 npm run dev
 ```

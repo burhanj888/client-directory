@@ -1,6 +1,6 @@
 # 🧾 Client Directory App
 
-A responsive, full-featured client directory web application designed for banking and financial use cases. Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Supabase**, the app allows secure and real-time management of client data — including viewing details, performing fund transfers, and account closures.
+A responsive, full-featured client directory web application designed for banking and financial use cases. Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Supabase**, the app allows secure and real-time management of client data - including viewing details, performing fund transfers, and account closures.
 
 ---
 
@@ -12,11 +12,18 @@ Try it out here:
 
 ---
 
+## 📺 Demo Video
+
+Watch the full walkthrough on Loom:  
+👉 [Client Directory App Demo](https://www.loom.com/share/4b0895c872e544ca89c0f93dea6e3b17?sid=290f6f16-ca00-4276-bda3-bed01880b3a6)
+
+---
+
 ## ⚙️ Tech Stack
 
-- **Frontend:** [Next.js](https://nextjs.org/) (Pages Router)
+- **Frontend:** [Next.js](https://nextjs.org/) (TypeScript)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Backend:** [Supabase](https://supabase.io/) (PostgreSQL + Realtime + Auth)
+- **Backend:** [Supabase](https://supabase.io/) (PostgreSQL + Realtime)
 - **State Management:** React Hooks
 - **Tooling:** TypeScript, Heroicons, React Hot Toast, PapaParse
 
@@ -44,10 +51,3 @@ cd client-directory
 npm install
 npm run dev
 ```
-
-## 📺 Demo Video
-
-Watch the full walkthrough on Loom:  
-👉 [Client Directory App Demo](https://www.loom.com/share/4b0895c872e544ca89c0f93dea6e3b17?sid=290f6f16-ca00-4276-bda3-bed01880b3a6)
-
----

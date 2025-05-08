@@ -1,13 +1,15 @@
-type Client = {
-    id: string;
-    name: string;
-    birthday: string;
-    type: string;
-    account: string;
-    balance: number;
+import { Client } from '../types';
+
+type Props = {
+    clients: Client[];
+    onView: (client: Client) => void;
+    onTransfer: (client: Client) => void;
+    onDelete: (client: Client) => void;
   };
   
-  export default function ClientTable({ clients }: { clients: Client[] }) {
+  export default function ClientTable({ clients, onView, onTransfer, onDelete }: Props) {
+
+    
     return (
       <div className="bg-white rounded-lg shadow overflow-x-auto">
         <table className="min-w-full text-sm text-left">
@@ -37,9 +39,13 @@ type Client = {
                   ${client.balance.toLocaleString()}
                 </td>
                 <td className="p-3 text-center text-red-900">
-                  <button className="hover:underline"> Details </button><span> | </span>  
+                <button onClick={() => onView(client)} className="hover:underline">Details</button> <span className='hidden sm:inline'> | </span>
+                <button onClick={() => onTransfer(client)} className="hover:underline">Transfer</button> <span className='hidden sm:inline'> | </span>
+                <button onClick={() => onDelete(client)} className="hover:underline">Close Account</button>
+
+                  {/* <button className="hover:underline"> Details </button><span> | </span>  
                   <button className="hover:underline"> Transfer </button><span> | </span>
-                  <button className="hover:underline"> Close Account </button>
+                  <button className="hover:underline"> Close Account </button> */}
                 </td>
               </tr>
             ))}
